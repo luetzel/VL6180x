@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Arduino Sketch for connecting multiple VL6180x sensors
 
 For Arduino UNO & Pro Mini use
@@ -20,3 +21,7 @@ Thus, it is possible to use multiple sensors without changeing the hard-coded ad
 
 For connecting more than two modules, uncomment, copy & paste and edit the desired
 code blocks.
+=======
+# VL6180x
+Arduino Sketch for connecting multiple VL6180x sensors
+>>>>>>> 875f9ef8bc97654038bbe245c3bd2a4ce225651e
