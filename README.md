@@ -5,7 +5,7 @@ For Arduino UNO & Pro Mini use
 SDA: A4
 SCL: A5
 
-*WARNING*: Some sensors require 2.8 V VCC. Connect a step-down regulator e.g. LM317.
+**WARNING**: Some sensors require 2.8 V VCC. Connect a step-down regulator e.g. LM317.
 For VOUT 2.8 V use R1 of 220 Ohm and R2 220 Ohm + 47 Ohm, respectively.
 
 Also, a level shifter must be used for 2.8 V breakout boards!
