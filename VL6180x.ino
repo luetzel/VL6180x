@@ -25,13 +25,13 @@ I2C of the sensor. Thus, it is possible to use multiple sensors without changein
 hard-coded address of the module.
 */
 
-//#include <Wire.h>
+#include <Wire.h>
 #include <VL6180X.h>
 
 /* List of adresses for each sensor - after reset the address can be configured */
 #define address0 0x20
 #define address1 0x22
-// #define address1 0x24
+//#define address2 0x24
 // #define address1 0x26
 // #define address1 0x28
 // #define address1 0x30
@@ -58,7 +58,7 @@ VL6180X sensor1;
 void setup()
 {
   Serial.begin(9600);
-  //Wire.begin();
+  Wire.begin();
 
   // Reset all connected sensors
   pinMode(enablePin0,OUTPUT);
@@ -111,6 +111,20 @@ void setup()
   sensor1.startInterleavedContinuous(100);
 
   // Sensor2
+  //  Serial.println("Start Sensor 2");
+  //  digitalWrite(enablePin1, HIGH);
+  //  sensor2.init();
+  //  sensor2.configureDefault();
+  //  sensor2.setAddress(address1);
+  //  Serial.println(sensor1.readReg(0x212),HEX);
+  //  sensor2.writeReg(VL6180X::SYSRANGE__MAX_CONVERGENCE_TIME, 30);
+  //  sensor2.writeReg16Bit(VL6180X::SYSALS__INTEGRATION_PERIOD, 50);
+  //  sensor2.setTimeout(500);
+  //  sensor2.stopContinuous();
+  //  sensor2.setScaling(3);
+  //  delay(300);
+  //  sensor2.startInterleavedContinuous(100);
+  
   // copy & paste as much sensors as you require
   
   delay(1000);
@@ -130,6 +144,10 @@ void loop()
   Serial.print(sensor1.readAmbientContinuous());
   if (sensor1.timeoutOccurred()) { Serial.print(" TIMEOUT"); }
 
+  //Serial.print("\tDaylight2: ");
+  //Serial.print(sensor1.readAmbientContinuous());
+  //if (sensor2.timeoutOccurred()) { Serial.print(" TIMEOUT"); }
+
   Serial.println();
 
   // Abstand in mm
@@ -140,6 +158,10 @@ void loop()
   Serial.print("\tDistance1: ");
   Serial.print(sensor1.readRangeContinuousMillimeters());
   if (sensor1.timeoutOccurred()) { Serial.print(" TIMEOUT"); }
+
+  //Serial.print("\tDistance2: ");
+  //Serial.print(sensor1.readRangeContinuousMillimeters());
+  //if (sensor2.timeoutOccurred()) { Serial.print(" TIMEOUT"); }
 
 // copy & paste as much sensors as you require
 
