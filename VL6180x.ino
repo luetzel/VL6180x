@@ -27,6 +27,7 @@ hard-coded address of the module.
 
 #include <Wire.h>
 #include <VL6180X.h>
+#define RANGE 1
 
 /* List of adresses for each sensor - after reset the address can be configured */
 #define address0 0x20
@@ -87,6 +88,7 @@ void setup()
   // Sensor0
   Serial.println("Start Sensor 0");
   digitalWrite(enablePin0, HIGH);
+  delay(50);
   sensor0.init();
   sensor0.configureDefault();
   sensor0.setAddress(address0);
@@ -103,6 +105,7 @@ void setup()
   // Sensor1
   Serial.println("Start Sensor 1");
   digitalWrite(enablePin1, HIGH);
+  delay(50);
   sensor1.init();
   sensor1.configureDefault();
   sensor1.setAddress(address1);
@@ -118,6 +121,7 @@ void setup()
   // Sensor2
   Serial.println("Start Sensor 2");
   digitalWrite(enablePin2, HIGH);
+  delay(50);
   sensor2.init();
   sensor2.configureDefault();
   sensor2.setAddress(address2);
@@ -133,6 +137,7 @@ void setup()
   // Sensor3
   Serial.println("Start Sensor 3");
   digitalWrite(enablePin3, HIGH);
+  delay(50);
   sensor3.init();
   sensor3.configureDefault();
   sensor3.setAddress(address3);
@@ -148,6 +153,7 @@ void setup()
   // Sensor4
   Serial.println("Start Sensor 4");
   digitalWrite(enablePin4, HIGH);
+  delay(50);
   sensor4.init();
   sensor4.configureDefault();
   sensor4.setAddress(address4);
@@ -163,6 +169,7 @@ void setup()
   // Sensor5
   Serial.println("Start Sensor 5");
   digitalWrite(enablePin5, HIGH);
+  delay(50);
   sensor5.init();
   sensor5.configureDefault();
   sensor5.setAddress(address5);
@@ -178,6 +185,7 @@ void setup()
   // Sensor6
   Serial.println("Start Sensor 6");
   digitalWrite(enablePin6, HIGH);
+  delay(50);
   sensor6.init();
   sensor6.configureDefault();
   sensor6.setAddress(address6);
@@ -193,6 +201,7 @@ void setup()
   // Sensor7
   Serial.println("Start Sensor 7");
   digitalWrite(enablePin7, HIGH);
+  delay(50);
   sensor7.init();
   sensor7.configureDefault();
   sensor7.setAddress(address7);
